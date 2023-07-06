@@ -1,0 +1,455 @@
+
+<div id="productDetail" ng-controller="detailscontroller">
+
+    <header class="header-area" id="Header">
+            <!-- Mainmenu Area Start -->
+            <div class="mainmenu-area header-sticky fixed">
+                <div class="full-container">
+                    <div class="row" id="menu">
+                        <div class="col-xl-5 col-lg-5 col-sm-12 display-none-md display-none-xs">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li class="active"><a href="#/home">Home</a></li>
+                                        <li><a href=""> Online Shop</a>
+                                            <ul>
+                                                <li><a href="#/tshirt">T-Shirt</a></li>
+                                                <li><a href="#/shirt">Shirts</a></li>
+                                                <li><a href="#/jeans">Denims</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="megamenu"><a href="#/franchise">Franchise</a>
+                                        </li>
+                                        <li><a href="#">Stores</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-sm-12 col-5">
+                            <div class="homeLogo text-center">
+                                <a href="#/"><img src="images/KAIZEN-ICON.png" alt="KAAIZEN"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-sm-12 col-7">
+                            <div class="header-content d-flex justify-content-end">
+                                <div class="search-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <form action="#" class="search-form">
+                                        <input type="text" placeholder="Enter your search...">
+                                        <button type="button"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                                <div class="cart-wrapper">
+                                    <a href="#/cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span>2</span>
+                                    </a>
+                                </div>
+                                <div class="settings-wrapper">
+                                    <a href="#"><i class="fa fa-th"></i></a>
+                                    <div class="settings-content">
+                                        <h4>My Account</h4>
+                                        <ul>
+                                            <li><a href="#/account">My Account</a></li>
+                                            <li><a href="">Wishlist</a></li>
+                                            <li><a href="#/cart">Shopping Cart</a></li>
+                                            <li><a href="#/checkout">Checkout</a></li>
+                                            <li><a href="#">Login</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mainmenu Area End -->
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="mobile-menu container">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li><a href="#/home">HOME</a>    
+                            </li>
+                            <li><a href="">Online Shop</a>
+                                <ul>
+                                    <li><a href="#/tshirt">T-Shirt</a></li>
+                                    <li><a href="#/shirt">Shirts</a></li>
+                                    <li><a href="#/jeans">Denims</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#/franchise">Franchise</a>
+                            </li>
+                            <li><a href="#">Stores</a></li>
+                        </ul>
+                    </nav>                          
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+    </header>
+
+    <div class="page-header-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Product</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="#/home">Home</a>
+                        </li>
+                        <li class="active">Product</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <main class="container">
+      <div class="product-detail">
+      <!-- Left Column / Headphones Image -->
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+              <div class="left-column-left">
+                <img data-image="black" src="images/t-shirt22.jpg" alt="">
+                <img data-image="blue" src="images/t-shirt3.jpg" alt="">
+                <img data-image="red" class="active" src="images/{{productData[0].pd_image}}" alt="">
+              </div>
+              <!-- <div class="left-column-right">
+                <div class="single-left-column-right">
+                  <a href="images/t-shirt22.jpg"><img src="images/t-shirt22.jpg" alt=""></a>
+                </div>
+                <div class="single-left-column-right">
+                  <a href="images/t-shirt3.jpg"><img src="images/t-shirt3.jpg" alt=""></a>
+                </div>
+                <div class="single-left-column-right">
+                  <a href="images/t-shirt44.jpg"><img src="images/t-shirt44.jpg" alt=""></a>
+                </div> 
+              </div>  -->
+        </div>
+      <!-- Right Column -->
+        <div class="col-md-6">
+          <div class="right-column">
+            <!-- Product Description -->
+            <div class="product-description-single">
+              <span>{{productData[0].pd_category}}
+              </span>
+              <h1>{{productData[0].pd_name}}</h1>
+              <p>New: A brand-new, unused and undamaged item. See the seller's listing for full details. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At illum aperiam laborum, ipsum aliquam odio animi consequatur doloremque neque quas?.
+              </p>
+            </div>
+            <!-- Product Configuration -->
+            <div class="product-configuration">
+              <!-- Product Color -->
+              <div class="product-color">
+                <span>Select Color
+                </span>
+                <div class="color-choose">
+                  <div>
+                    <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                    <label for="red">
+                      <span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                    <label for="blue">
+                      <span>
+                      </span>
+                    </label>
+                  </div>
+                  <div>
+                    <input data-image="black" type="radio" id="black" name="color" value="black">
+                    <label for="black">
+                      <span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- Cable Configuration -->
+              <div class="cable-config">
+                <span>Sizes
+                </span>
+                <div class="cable-choose" >
+                  <button>{{productData[0].pd_size}}</button>
+                  <!-- <button>M</button>
+                  <button>L</button>
+                  <button>XL</button>
+                  <button>XXL</button> -->
+                </div>
+                <label for="quantity">Quantity</label><span id="quant"><input type="text" id="quantity" class="form-control"></span>
+              </div>
+            </div>
+            <!-- Product Pricing -->
+            <div class="product-price-single">
+              <span><i class="fa fa-inr"></i>{{productData[0].pd_price}}</span>
+              <a href="#" class="addcart-btn">Add to cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+<div class="container">
+    <div class="woocommerce-tabs tab-container vertical-tab clearfix box pb-100">
+        <ul class="tabs">
+            <li  class="active"><a data-target="#tab3-1" data-toggle="tab" role="tab">Decriptions</a></li>
+            <li><a data-target="#tab3-2" data-toggle="tab"  role="tab">Details</a></li>
+            <li><a data-target="#tab3-3" data-toggle="tab"  role="tab">Reviews</a></li>
+            
+        </ul>
+        <div  class="tab-content panel entry-content">
+            <div class="tab-pane active show fade" id="tab3-1" role="tabpanel">
+                <p>Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis mauris sollicitudin commodo venenatis ligula commodo. Sed blandi dignissim Donec vel pellentesque neque. Nulla et quam vitae sapien vestibulum molestie. Cras ac ligula vitae urna suscipit venenatis id quis urnaauris sodales lacinia mauris.Nunc id purus erat. Sed posuere risus orci, eu laoreet ligula dictum a. Mauris ut sagittis metus, sed tincidunt arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                <p>Curabitur eu tellus sit amet orci mollis blandit. Integer egestas consectetur bibendum. Nunc id purus erat. Sed posuere risus orci, eu laoreet ligula dictum a. Mauris ut sagittis metus, sed tincidunt arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum lacinia ligula eu ligula hendrerit lobortis. Proin quis bibendum libero.</p>
+            </div>
+            <div class="tab-pane fade" id="tab3-2" role="tabpanel">
+                <dl class="shop_attributes">
+                    <dt>Composition:</dt>
+                    <dd>100% Polyester</dd>
+                    <dt>Washing:</dt>
+                    <dd>Please hand wash cool.</dd>
+                    <dt>Made in:</dt>
+                    <dd>India</dd>
+                    <dt class="note">Sizing note:</dt>
+                    <dd>Because the product is a genuine cut, we recommend sticking to your usual size </dd>
+                </dl>
+            </div>
+    
+        
+            <div class="tab-pane fade" id="tab3-3">
+                <div id="comments">
+                    <a href="#" class="btn btn-sm style1 btn-write-review"><i class="fa fa-pencil"></i>Write Review</a>
+                    <h3>2 Reviews </h3>
+                    <ol class="commentlist">
+                        <li class="comment">
+                            <div class="author-img">
+                                <span><img src="images/female.png" alt=""></span>
+                            </div>
+                            <div class="comment-content">
+                                <h5 class="comment-author-name"><a href="#">Anna Brown</a></h5>
+                                    <ul class="product-caption-rating">
+                                        <li class="rated"><i class="fa fa-star"></i></li>
+                                        <li class="rated"><i class="fa fa-star"></i></li>
+                                        <li class="rated"><i class="fa fa-star"></i></li>
+                                        <li class="rated"><i class="fa fa-star"></i></li>
+                                        <li class="rated"><i class="fa fa-star"></i></li>
+                                    </ul>
+                                <span class="comment-date">12 Apr, 2018</span>
+                                <div class="description">
+                                    <p>Nulla mattis rsitmet dolor sollicitudi aliquamquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo Lorem ipsum dolor sit amet gravida sagittis lacus. Morbi sit amet mauris mi.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="comment">
+                            <div class="author-img">
+                                <span><img src="images/female.png" alt=""></span>
+                            </div>
+                            <div class="comment-content">
+                                <h5 class="comment-author-name"><a href="#">Jessica Marvin</a></h5>
+                                <ul class="product-caption-rating">
+                                    <li class="rated"><i class="fa fa-star"></i></li>
+                                    <li class="rated"><i class="fa fa-star"></i></li>
+                                    <li class="rated"><i class="fa fa-star"></i></li>
+                                    <li class="rated"><i class="fa fa-star"></i></li>
+                                    <li class="rated"><i class="fa fa-star"></i></li>
+                                </ul>
+                                <span class="comment-date">15 May, 2018</span>
+                                <div class="description">
+                                    <p>Nulla mattis rsitmet dolor sollicitudi aliquamquae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo Lorem ipsum dolor sit amet gravida sagittis lacus. Morbi sit amet mauris mi.</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div id="review_form">
+                    <form>
+                        <a href="#" class="btn btn-sm style4 btn-back-reviews"><i class="fa fa-long-arrow-left"></i>Back To Reviews</a>
+                        <h3>Be the first to review </h3>
+                        <div class="row">
+                            <div class="col-md-10 col-lg-8">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input type="text" class="input-text full-width" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="input-text full-width" required="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Rating</label>
+                                    <input type="hidden" id="review_score" value="">
+                                    <span class="input-star-rating">
+                                        <input type="radio" value="5" name="review_score">
+                                        <input type="radio" value="4" name="review_score">
+                                        <input type="radio" value="3" name="review_score">
+                                        <input type="radio" value="2" name="review_score">
+                                        <input type="radio" value="1" name="review_score">
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Your review</label>
+                                        <textarea class="input-text full-width" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-sm style1" type="submit">Submit Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="product-area related-product pt-95 pb-100 fix">
+            <div class="container">
+                <h3 class="subtitle-2">RELATED PRODUCTS</h3>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <slick ng-if="relatedProducts" settings="slickconfig3">
+                        <div class="custom-col"  ng-repeat="related in relatedProducts">
+                            <div class="single-product-item">
+                                <div class="product-image">
+                                    <a href="#details?id={{related.pd_product_id}}">
+                                        <!-- <span class="onsale">Sale!</span> -->
+                                        <img src="images/{{related.pd_image}}" alt="">
+                                    </a>  
+                                    <ul class="product-hover">
+                                        <li>
+                                            <a href="wishlist.html" data-toggle="tooltip" data-placement="left" title="Add to Wishlist" ><i class="fa fa-heart-o"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="tooltip" data-placement="left" title="Add to compare" ><i class="fa fa-sliders"></i></a>
+                                        </li>
+                                        <li class="btn-quickview modal-view" data-toggle="modal" data-target="#productModal">
+                                            <span data-toggle="tooltip" data-placement="left" title="Quick View"><i class="fa fa-external-link"></i></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="product-caption" id="pCaption">
+                                    <ul class="product-caption-rating">
+                                        <li class="rated"><i class="fa fa-star"></i>
+                                        </li>
+                                        <li class="rated"><i class="fa fa-star"></i>
+                                        </li>
+                                        <li class="rated"><i class="fa fa-star"></i>
+                                        </li>
+                                        <li class="rated"><i class="fa fa-star"></i>
+                                        </li>
+                                        <li class="rated"><i class="fa fa-star"></i>
+                                        </li>
+                                    </ul>
+                                    <h5 class="product-caption-title">{{related.pd_name}}</h5>
+                                    <div class="cart-btn-wrap">
+                                        <a href="cart.html" data-toggle="tooltip" data-placement="top" title="Add to cart"><button class="btn addCartBtn"><i class="fa fa-shopping-cart"></i>Add to cart</button></a>
+                                        <ul class="product-hover">
+                                            <li>
+                                                <h6>SIZE:{{related.pd_size}}</h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </slick>
+                </div>
+            </div>
+        </div>
+
+    <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Kaizen</h4>
+                        <p>J-44 S/F West Patel Nagar, New Delhi-IN</p>
+                        <p><i class="fa fa-envelope"></i>:customersupport@kaizen.com</p>
+                        <p><i class="fa fa-phone"></i>:+91-1234567890</p>
+                        <ul class="main-footer-social-list">
+                            <li>
+                                <a class="fa fa-facebook" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-twitter" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-pinterest" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-instagram" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-google-plus" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Popular Tags</h4>
+                        <ul class="main-footer-tag-list">
+                            <li><a href="#">New Season</a>
+                            </li>
+                            <li><a href="#">Mens</a>
+                            </li>
+                            <li><a href="#">Denims</a>
+                            </li>
+                            <li><a href="#">classic</a>
+                            </li>
+                            <li><a href="#">modern</a>
+                            </li>
+                            <li><a href="#">T-shirts</a>
+                            </li>
+                            <li><a href="#">Jeans</a>
+                            </li>
+                            <li><a href="#">Fashion</a>
+                            </li>
+                            <li><a href="#">Cool</a>
+                            </li>
+                            <li><a href="#">Shirts</a>
+                            </li>
+                            <li><a href="#">Formal</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Newsletter</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>Sign up to the newsletter</label>
+                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Sign up" />
+                        </form>
+                    </div>
+                </div>
+                <ul class="main-footer-links-list">
+                    <li><a href="#/about">About Us</a>
+                    </li>
+                    <li><a href="#/career">Careers</a>
+                    </li>
+                    <li><a href="#">Support & Customer Service</a>
+                    </li>
+                    <li><a href="#/privacy">Privacy</a>
+                    </li>
+                    <li><a href="#/terms">Terms</a>
+                    </li>
+                    <li><a href="#">Shipping</a>
+                    </li>
+                    <li><a href="#">Payments & Refunds</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text">Copyright &copy; <a href="#">Kaizen</a> 2018. Designed by NGBCS. All rights reseved</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+</div>

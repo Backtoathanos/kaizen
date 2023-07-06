@@ -1,0 +1,418 @@
+
+<div id="jeans" ng-controller="shirtcontroller">
+
+    <header class="header-area" id="Header">
+            <!-- Mainmenu Area Start -->
+            <div class="mainmenu-area header-sticky fixed">
+                <div class="full-container">
+                    <div class="row" id="menu">
+                        <div class="col-xl-5 col-lg-5 col-sm-12 display-none-md display-none-xs">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li class="active"><a href="#/home">Home</a></li>
+                                        <li><a href=""> Online Shop</a>
+                                            <ul>
+                                                <li><a href="#/tshirt">T-Shirt</a></li>
+                                                <li><a href="#/shirt">Shirts</a></li>
+                                                <li><a href="#/jeans">Denims</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="megamenu"><a href="#/franchise">Franchise</a>
+                                        </li>
+                                        <li><a href="#">Stores</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-sm-12 col-5">
+                            <div class="homeLogo text-center">
+                                <a href="#/"><img src="images/KAIZEN-ICON.png" alt="KAAIZEN"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-sm-12 col-7">
+                            <div class="header-content d-flex justify-content-end">
+                                <div class="search-wrapper">
+                                    <a href="#"><i class="fa fa-search"></i></a>
+                                    <form action="#" class="search-form">
+                                        <input type="text" placeholder="Enter your search...">
+                                        <button type="button"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                                <div class="cart-wrapper">
+                                    <a href="#/cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        <span>2</span>
+                                    </a>
+                                </div>
+                                <div class="settings-wrapper">
+                                    <a href="#"><i class="fa fa-th"></i></a>
+                                    <div class="settings-content">
+                                        <h4>My Account</h4>
+                                        <ul>
+                                            <li><a href="#/account">My Account</a></li>
+                                            <li><a href="">Wishlist</a></li>
+                                            <li><a href="#/cart">Shopping Cart</a></li>
+                                            <li><a href="#/checkout">Checkout</a></li>
+                                            <li><a href="#">Login</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mainmenu Area End -->
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="mobile-menu container">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li><a href="#/home">HOME</a>    
+                            </li>
+                            <li><a href="">Online Shop</a>
+                                <ul>
+                                    <li><a href="#/tshirt">T-Shirt</a></li>
+                                    <li><a href="#/shirt">Shirts</a></li>
+                                    <li><a href="#/jeans">Denims</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#/franchise">Franchise</a>
+                            </li>
+                            <li><a href="#">Stores</a></li>
+                        </ul>
+                    </nav>                          
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+    </header>
+
+        <div class="page-header-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">Shirts</h1>
+                    <ul class="page-breadcrumb">
+                        <li><a href="#/home">Home</a>
+                        </li>
+                        <li class="active">Shirt</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                <div class="container">
+                    <ul class="category-selections clearfix">
+                        <li>
+                            <a class="fa fa-th-large category-selections-icon active" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="fa fa-th-list category-selections-icon" href="#"></a>
+                        </li>
+                        <li><span class="category-selections-sign">Sort by :</span>
+                            <select  class="category-selections-select" ng-model="select" ng-change="selectView(select)" ng-options="list for list in lists">
+                                <!-- <option vlaue="new" selected>Newest First</option>
+                                <option value="best">Best Sellers</option>
+                                <option value="trending">Trending Now</option>
+                                <option value="rated">Best Rated</option> -->
+                            </select>
+                        </li>
+                        <li><span class="category-selections-sign">Sort by :</span>
+                            <select  class="category-selections-select">
+                                <option value="+price">Price : Lowest First</option>
+                                <option value="-price">Price : Highest First</option>
+                            </select>
+                        </li>
+                        <!-- <li><span class="category-selections-sign">Items :</span>
+                            <select class="category-selections-select">
+                                <option selected>9 / page</option>
+                                <option>12 / page</option>
+                                <option>18 / page</option>
+                                <option>All</option>
+                            </select>
+                        </li> -->
+                    </ul>
+                </div>
+
+        <div class="container pb-30">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <aside class="category-filters category-filters-inverse">
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Category</h3>
+                            <ul class="cateogry-filters-list">
+                                <li><a href="#">Clothing</a>
+                                </li>
+                                <li><a href="#">Mens</a>
+                                </li>
+                                <li><a href="#">Shirts</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="category-filters-section" ng-click="selectView()">
+                            <h3 class="widget-title-sm">Price</h3>
+                            <rzslider 
+                                rz-slider-model="slider.minValue"
+                                rz-slider-high="slider.maxValue"
+                                rz-slider-options="slider.options">    
+                            </rzslider>
+                        </div>
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Type</h3>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Formal<span class="category-filters-amount">(90)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Casual<span class="category-filters-amount">(97)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Party Wear<span class="category-filters-amount">(94)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Sleeves</h3>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />3/4 Sleeve<span class="category-filters-amount">(90)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Half Sleeve<span class="category-filters-amount">(97)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Full Sleeve<span class="category-filters-amount">(94)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Long Sleeve<span class="category-filters-amount">(87)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Short Sleeve<span class="category-filters-amount">(54)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Size</h3>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />XS<span class="category-filters-amount">(70)</span>
+                                </label>
+                                <label>
+                                    <input class="i-check" type="checkbox" />S<span class="category-filters-amount">(70)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />M<span class="category-filters-amount">(40)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />L<span class="category-filters-amount">(72)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />XL<span class="category-filters-amount">(54)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />XXL<span class="category-filters-amount">(54)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Discount</h3>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />10% Off or More<span class="category-filters-amount">(13)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />25% Off or More<span class="category-filters-amount">(20)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />50% Off or More<span class="category-filters-amount">(92)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />75% Off or More<span class="category-filters-amount">(20)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="category-filters-section">
+                            <h3 class="widget-title-sm">Features</h3>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />New<span class="category-filters-amount">(12)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />Featured<span class="category-filters-amount">(69)</span>
+                                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input class="i-check" type="checkbox" />On Sale<span class="category-filters-amount">(20)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-md-9 col-sm-6 col-xs-12">
+                    <div class="row">
+                            <div class="col-md-4 col-sm-12" ng-repeat="shirt in shirts">
+                                <div class="custom-col" >
+                                    <div class="single-product-item">
+                                        <div class="product-image">
+                                            <a href="#/details?id={{shirt.pd_product_id}}">
+                                                <!-- <span class="onsale">Sale!</span> -->
+                                                <img src="images/{{shirt.pd_image}}" alt="">
+                                            </a>  
+                                        </div>
+                                        <div class="product-caption" id="pCaption">
+                                            <ul class="product-caption-rating">
+                                                <li class="rated"><i class="fa fa-star"></i>
+                                                </li>
+                                                <li class="rated"><i class="fa fa-star"></i>
+                                                </li>
+                                                <li class="rated"><i class="fa fa-star"></i>
+                                                </li>
+                                                <li class="rated"><i class="fa fa-star"></i>
+                                                </li>
+                                                <li class="rated"><i class="fa fa-star"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="pprice"><i class="fa fa-inr"></i>{{shirt.pd_price}}</span>
+                                            <h5 class="product-caption-title"><a href="#">{{shirt.pd_name}}</a></h5>
+                                            
+                                            <div class="cart-btn-wrap">
+                                                <a href="" data-toggle="tooltip" data-placement="top" title="Add to cart"><button class="btn addCartBtn"><i class="fa fa-shopping-cart"></i>Add to cart</button></a>
+                                                 <ul class="product-hover">
+                                                    <li>
+                                                        <h6>SIZE:{{shirt.pd_size}}</h6>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+    <footer class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Kaizen</h4>
+                        <p>J-44 S/F West Patel Nagar, New Delhi-IN</p>
+                        <p><i class="fa fa-envelope"></i>:customersupport@kaizen.com</p>
+                        <p><i class="fa fa-phone"></i>:+91-1234567890</p>
+                        <ul class="main-footer-social-list">
+                            <li>
+                                <a class="fa fa-facebook" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-twitter" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-pinterest" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-instagram" href="#"></a>
+                            </li>
+                            <li>
+                                <a class="fa fa-google-plus" href="#"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Popular Tags</h4>
+                        <ul class="main-footer-tag-list">
+                            <li><a href="#">New Season</a>
+                            </li>
+                            <li><a href="#">Mens</a>
+                            </li>
+                            <li><a href="#">Denims</a>
+                            </li>
+                            <li><a href="#">classic</a>
+                            </li>
+                            <li><a href="#">modern</a>
+                            </li>
+                            <li><a href="#">T-shirts</a>
+                            </li>
+                            <li><a href="#">Jeans</a>
+                            </li>
+                            <li><a href="#">Fashion</a>
+                            </li>
+                            <li><a href="#">Cool</a>
+                            </li>
+                            <li><a href="#">Shirts</a>
+                            </li>
+                            <li><a href="#">Formal</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="widget-title-sm">Newsletter</h4>
+                        <form>
+                            <div class="form-group">
+                                <label>Sign up to the newsletter</label>
+                                <input class="newsletter-input form-control" placeholder="Your e-mail address" type="text" />
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Sign up" />
+                        </form>
+                    </div>
+                </div>
+                <ul class="main-footer-links-list">
+                    <li><a href="#/about">About Us</a>
+                    </li>
+                    <li><a href="#/career">Careers</a>
+                    </li>
+                    <li><a href="#">Support & Customer Service</a>
+                    </li>
+                    <li><a href="#/privacy">Privacy</a>
+                    </li>
+                    <li><a href="#/terms">Terms</a>
+                    </li>
+                    <li><a href="#">Shipping</a>
+                    </li>
+                    <li><a href="#">Payments & Refunds</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright-text">Copyright &copy; <a href="#">Kaizen</a> 2018. Designed by NGBCS. All rights reseved</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>   
+</div>
